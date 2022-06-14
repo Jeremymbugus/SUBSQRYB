@@ -12,7 +12,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -23,6 +23,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+
+
+app.get('/', async function (
+    req,
+    res,
+    next
+) {
+    res.send('Hello World!')
+})
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -54,6 +64,10 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+
+
+
 
 
 module.exports = app;
