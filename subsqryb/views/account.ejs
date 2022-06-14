@@ -1,0 +1,52 @@
+<html>
+<head>
+    <html>
+
+    <head>
+    </head>
+
+<body>
+<div>
+    <h1>Account Dashboard</h1>
+    <p>Hi <%- customer.email %>
+    </p>
+
+    <% if (customer.plan == "none" ) { %>
+        <p>
+            You are currently not on any plan. Purchase a subscription below.
+        </p>
+        <input type="radio" id="basic" name="product" value="basic"/>
+        <label for="basic">Basic for $10</label><br/>
+        <input type="radio" id="pro" name="product" value="pro"/>
+        <label for="pro">Pro for $12</label><br/>
+        <button id="checkout-button" type="submit">
+            Buy now
+        </button>
+    <% } else{ %>
+        <p>
+            You are currently on the <%- customer.plan %> plan
+            %>
+        </p>
+        <% if (customer.hasTrial) { %>
+
+            <p>Trial active until <%- customer.endDate %>
+            </p>
+        <% } else{ %>
+
+            <p>Trial inactive. Plan will end on <%- customer.endDate %>
+            </p>
+        <% } %>
+    <% } %>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+<script>
+    var customer =<%- JSON.stringify(customer) %>;
+    console.log(customer);
+</script>
+<script type="text/javascript" src="/javascripts/account.js"></script>
+</body>
+<html>

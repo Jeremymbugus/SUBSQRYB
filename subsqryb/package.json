@@ -6,12 +6,17 @@
     "start": "nodejs ./bin/www"
   },
   "dependencies": {
-    "express": "~4.0.0",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "memory-store": "^0.0.1",
+    "memorystore": "^1.6.7",
+    "mongoose": "^6.3.8",
+    "morgan": "^1.10.0",
     "static-favicon": "~1.0.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
-    "body-parser": "~1.0.0",
-    "debug": "~0.7.4",
-    "ejs": "~0.8.5"
+    "stripe": "^9.8.0"
   }
 }
