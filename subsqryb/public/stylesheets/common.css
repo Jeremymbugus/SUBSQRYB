@@ -4,7 +4,7 @@ body {
 }
 
 .btn-primary {
-    background-color: #5000ff;
+    background-color: deeppink;
 }
 .btn-primary:hover {
     background-color: #4d02ee;
